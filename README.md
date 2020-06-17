@@ -25,6 +25,7 @@ npm install --save react-router-dom
 ```
 npm install --save reactstrap
 npm install --save bootstrap
+npm install --save react-select
 ```
 
 ## 4. Folder
