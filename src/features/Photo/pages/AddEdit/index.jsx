@@ -1,9 +1,15 @@
 import React from "react";
+import Banner from "../../../../components/Banner";
+import PhotoForm from "../../components/PhotoForm";
+import "./AddEdit.scss";
 
 function AddEditPage(props) {
   return (
-    <div>
-      <h2>Add Edit Page</h2>
+    <div className="photo-edit">
+      <Banner title="Pick your amazing photo"></Banner>
+      <div className="photo-edit__form">
+        <PhotoForm />
+      </div>
     </div>
   );
 }

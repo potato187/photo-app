@@ -23,7 +23,8 @@ npm install --save react-router-dom
 ## 3. Add UI library
 
 ```
-npm install -save reactstrap
+npm install --save reactstrap
+npm install --save bootstrap
 ```
 
 ## 4. Folder
@@ -44,3 +45,9 @@ src
 ## 5. Routing
 
 Lazy load components.
+
+## 6. React Select
+
+```
+npm install --save react-select
+```
