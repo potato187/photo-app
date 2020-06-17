@@ -1,30 +1,41 @@
-import React from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import Select from "react-select";
+/* eslint-disable no-unused-expressions */
 import { PHOTO_CATEGORY_OPTIONS } from "constants/global";
+import InputField from "custom-field/InputField";
+import SelectField from "custom-field/SelectField";
+import { FastField, Form, Formik } from "formik";
+import React from "react";
 PhotoForm.propTypes = {};
 
 function PhotoForm(props) {
+  const initialValues = {
+    title: "",
+    categoryId: null,
+  };
   return (
-    <Form>
-      <FormGroup>
-        <Label for="titleId">Title</Label>
-        <Input name="title" id="titleId" placeholder="Eg: wow nature ..." />
-      </FormGroup>
+    <Formik initialValues={initialValues}>
+      {(formikProps) => {
+        const { values, errors, touched } = formikProps;
+        console.log({ values, errors, touched });
+        return (
+          <Form>
+            <FastField
+              name="title"
+              component={InputField}
+              Label="title"
+              placeholder="Eg: wow nature ..."
+            />
 
-      <FormGroup>
-        <Label for="categoryId">Category</Label>
-        <Select
-          name="categoryId"
-          id="categoryId"
-          placeholder="What's your photo category ? "
-          options={PHOTO_CATEGORY_OPTIONS}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Button color="primary">Add to album</Button>
-      </FormGroup>
-    </Form>
+            <FastField
+              name="categoryId"
+              component={SelectField}
+              label="Category"
+              options={PHOTO_CATEGORY_OPTIONS}
+              placeholder="What's your photo category ?"
+            />
+          </Form>
+        );
+      }}
+    </Formik>
   );
 }
 

@@ -52,3 +52,9 @@ Lazy load components.
 ```
 npm install --save react-select
 ```
+
+## 7. Formik and custom field
+
+```
+npm install --save formik
+```
