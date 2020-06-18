@@ -14,7 +14,6 @@ Banner.defaultProps = {
 
 function Banner(props) {
   const { title, backgroundUrl } = props;
-  console.log(title, backgroundUrl);
   const bannerStyler = backgroundUrl
     ? { backgroundImage: `url(${backgroundUrl})` }
     : {};

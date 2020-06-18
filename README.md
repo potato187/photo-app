@@ -58,3 +58,9 @@ npm install --save react-select
 ```
 npm install --save formik
 ```
+
+## 8. Validation with Yup
+
+```
+npm install --save yup
+```

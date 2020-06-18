@@ -1,6 +1,7 @@
+import { ErrorMessage } from "formik";
 import PropTypes from "prop-types";
 import React from "react";
-import { FormGroup, Input } from "reactstrap";
+import { FormFeedback, FormGroup, Input } from "reactstrap";
 
 InputField.propTypes = {
   field: PropTypes.object.isRequired, // formik field
@@ -20,8 +21,10 @@ InputField.defaultProps = {
 };
 
 function InputField(props) {
-  const { field, type, label, placeholder, disable } = props; //fast field of formik
+  const { field, form, type, label, placeholder, disable } = props; //fast field of formik
   const { name, value, onChange, onBlur } = field; // important
+  const { errors, touched } = form;
+  const showError = errors[name] && touched[name];
   return (
     <FormGroup>
       {label && <label for={name}>{label}</label>}
@@ -35,7 +38,9 @@ function InputField(props) {
         type={type}
         disabled={disable}
         placeholder={placeholder}
+        invalid={showError}
       />
+      <ErrorMessage name={name} component={FormFeedback} />
     </FormGroup>
   );
 }
