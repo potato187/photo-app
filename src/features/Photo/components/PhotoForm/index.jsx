@@ -4,6 +4,7 @@ import InputField from "custom-field/InputField";
 import SelectField from "custom-field/SelectField";
 import { FastField, Form, Formik } from "formik";
 import React from "react";
+import RandomPhotoField from "custom-field/RandomPhotoField";
 PhotoForm.propTypes = {};
 
 function PhotoForm(props) {
@@ -31,6 +32,11 @@ function PhotoForm(props) {
               label="Category"
               options={PHOTO_CATEGORY_OPTIONS}
               placeholder="What's your photo category ?"
+            />
+            <FastField
+              name="photo"
+              component={RandomPhotoField}
+              label="Photo"
             />
           </Form>
         );
